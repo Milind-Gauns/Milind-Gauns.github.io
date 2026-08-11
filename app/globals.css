@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --sq: rgba(242, 239, 233, 0.035); /* light board square */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0e0e10;
+  color: #f2efe9;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #2e4a52;
+  color: #f2efe9;
+}
+
+:focus-visible {
+  outline: 2px solid #6ec1d6;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ---------- type ---------- */
+
+.eyebrow {
+  @apply font-mono text-[11px] uppercase tracking-[0.28em] text-muted;
+}
+
+.h-section {
+  @apply text-4xl font-medium leading-[1.05] tracking-tight text-ink md:text-6xl;
+}
+
+.rule {
+  @apply h-px w-full bg-ink/10;
+}
+
+/* ---------- loading intro ---------- */
+
+.intro-seen #intro-overlay {
+  display: none;
+}
+
+#intro-overlay {
+  transition: opacity 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+#intro-overlay.intro-leaving {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-square {
+  opacity: 0;
+  animation: intro-square-in 0.5s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+@keyframes intro-square-in {
+  to {
+    opacity: 1;
+  }
+}
+
+.intro-trail {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: intro-draw 1s cubic-bezier(0.65, 0, 0.35, 1) 0.25s forwards;
+}
+
+@keyframes intro-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ---------- reveal on scroll ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.85s cubic-bezier(0.33, 1, 0.68, 1),
+    transform 0.85s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- board ---------- */
+
+.board-square-light {
+  fill: var(--sq);
+}
+
+.knight-piece {
+  transition:
+    transform 0.75s cubic-bezier(0.65, 0, 0.35, 1),
+    opacity 0.4s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .knight-piece {
+    transition: none;
+  }
+}
+
+/* ---------- marquee ---------- */
+
+.marquee-track {
+  animation: marquee 42s linear infinite;
+}
+
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------- hero scroll cue ---------- */
+
+.scroll-line {
+  animation: scroll-line 2.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes scroll-line {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  46% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  54% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+/* ---------- command palette ---------- */
+
+.palette-enter {
+  animation: palette-in 0.25s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+@keyframes palette-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- utility ---------- */
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
