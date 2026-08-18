@@ -13,11 +13,9 @@ export default function Hero() {
         {/* ---- left: the claim ---- */}
         <div className="lg:pr-8">
           <Reveal>
-<<<<<<< HEAD
-            <p className="eyebrow">{PERSON.positioning}</p>
-=======
+
             <p className="eyebrow">Portfolio — 2026</p>
->>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
+
           </Reveal>
           <Reveal delay={100}>
             <h1 className="mt-6 text-[clamp(2.75rem,8vw,5.5rem)] font-medium leading-[0.92] tracking-tight">
