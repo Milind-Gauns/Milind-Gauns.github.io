@@ -1,5 +1,9 @@
 import Reveal from "./Reveal";
+<<<<<<< HEAD
+import { SKILL_GROUPS, SKILL_MARQUEE } from "@/lib/content";
+=======
 import { SKILLS, SKILL_MARQUEE } from "@/lib/content";
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
 
 function MarqueeRow({ hidden = false }: { hidden?: boolean }) {
   return (
@@ -35,6 +39,22 @@ export default function Skills() {
           </h2>
         </Reveal>
 
+<<<<<<< HEAD
+        <div className="mt-16 grid gap-x-12 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-16">
+          {SKILL_GROUPS.map((group, i) => (
+            <Reveal key={group.name} delay={i * 70}>
+              <div className="border-t border-ink/10 pt-6">
+                <h3 className="eyebrow">{group.name}</h3>
+                <ul className="mt-5 space-y-2.5 font-mono text-sm text-ink/90">
+                  {group.items.map((skill) => (
+                    <li key={skill}>{skill}</li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+=======
         <Reveal delay={120}>
           <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:gap-20">
             <div>
@@ -55,6 +75,7 @@ export default function Skills() {
             </div>
           </div>
         </Reveal>
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
       </div>
 
       <Reveal delay={160}>

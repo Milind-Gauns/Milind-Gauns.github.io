@@ -68,14 +68,33 @@ export default function OffTheClock() {
               ))}
             </ul>
 
+<<<<<<< HEAD
+            {/* the pickleball result, with him standing on the card's baseline */}
+            <div className="relative mt-12 flex h-64 items-end overflow-hidden rounded-lg bg-surface pl-8 pr-40 md:h-72 md:pr-48">
+              <div className="pb-8">
+                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-accent">
+                  Runner-up
+                </p>
+                <p className="mt-3 text-lg font-medium leading-snug text-ink">
+                  State-level pickleball
+                </p>
+                <p className="mt-1 font-mono text-xs text-muted">Goa, 2026</p>
+              </div>
+=======
             <div className="mt-12 overflow-hidden rounded-lg bg-surface">
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
               <Image
                 src={PHOTOS.pickleball.src}
                 alt={PHOTOS.pickleball.alt}
                 width={PHOTOS.pickleball.width}
                 height={PHOTOS.pickleball.height}
+<<<<<<< HEAD
+                sizes="(max-width: 1024px) 45vw, 20rem"
+                className="pointer-events-none absolute bottom-0 right-2 h-[112%] w-auto max-w-none select-none object-contain object-bottom"
+=======
                 sizes="(max-width: 1024px) 90vw, 40vw"
                 className="mx-auto h-72 w-auto object-contain"
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
               />
             </div>
           </Reveal>

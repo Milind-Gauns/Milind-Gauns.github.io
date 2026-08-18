@@ -1,12 +1,30 @@
 "use client";
 
 import Image from "next/image";
+<<<<<<< HEAD
+import { useEffect, useRef } from "react";
+import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
+
+/** Wipe runs from the top edge at 88% of the viewport to 26%. */
+const START = 0.88;
+const END = 0.26;
+
+type Photo = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  /** Focal point for the crop, e.g. "50% 60%". */
+  objectPosition?: string;
+};
+=======
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 
 type Photo = { src: string; alt: string; width: number; height: number };
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
 
 type Props = {
   top: Photo;
@@ -36,6 +54,59 @@ export default function ScrollRevealPhoto({
   const cover = useRef<HTMLDivElement>(null);
   const edge = useRef<HTMLDivElement>(null);
 
+<<<<<<< HEAD
+  /**
+   * Driven by live geometry rather than ScrollTrigger.
+   *
+   * The effect is a linear map from the element's position to a clip-path,
+   * so it needs none of ScrollTrigger's machinery. Reading the rect each
+   * frame also means it cannot go stale when the GSAP-pinned section above
+   * changes the page height after first paint.
+   */
+  useEffect(() => {
+    if (reduced) return;
+
+    const el = root.current;
+    const coverEl = cover.current;
+    const edgeEl = edge.current;
+    if (!el || !coverEl || !edgeEl) return;
+
+    let frame = 0;
+
+    const update = () => {
+      frame = 0;
+      const { top } = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const span = (START - END) * vh;
+      const progress = Math.min(Math.max((START * vh - top) / span, 0), 1);
+      const pct = progress * 100;
+
+      coverEl.style.clipPath = `inset(0% 0% ${pct.toFixed(2)}% 0%)`;
+      edgeEl.style.top = `${pct.toFixed(2)}%`;
+      // the scan line fades in off the ends rather than popping
+      edgeEl.style.opacity = String(
+        Math.min(progress * 6, (1 - progress) * 6, 1),
+      );
+    };
+
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (frame) cancelAnimationFrame(frame);
+      coverEl.style.clipPath = "";
+      edgeEl.style.top = "";
+      edgeEl.style.opacity = "";
+    };
+  }, [reduced]);
+=======
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const mm = gsap.matchMedia();
@@ -76,13 +147,18 @@ export default function ScrollRevealPhoto({
 
     return () => mm.revert();
   }, []);
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
 
   // Without the wipe the top photo would cover the bottom one forever, so
   // reduced motion gets both, stacked.
   if (reduced) {
     return (
       <figure className={className}>
+<<<<<<< HEAD
+        <div className="max-w-[26rem] space-y-4">
+=======
         <div className="space-y-4">
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
           {[bottom, top].map((photo, i) => (
             <div
               key={photo.src}
@@ -93,7 +169,12 @@ export default function ScrollRevealPhoto({
                 alt={photo.alt}
                 width={photo.width}
                 height={photo.height}
+<<<<<<< HEAD
+                sizes="(max-width: 768px) 90vw, 26rem"
+                style={{ objectPosition: photo.objectPosition }}
+=======
                 sizes="(max-width: 768px) 90vw, 45vw"
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
                 className="aspect-[4/5] w-full object-cover"
               />
               <figcaption className="sr-only">
@@ -114,14 +195,23 @@ export default function ScrollRevealPhoto({
 
   return (
     <figure ref={root} className={className}>
+<<<<<<< HEAD
+      <div className="relative h-[clamp(20rem,56vh,32rem)] w-full max-w-[26rem] overflow-hidden rounded-lg bg-surface">
+=======
       <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg bg-surface">
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
         {/* revealed underneath */}
         <Image
           src={bottom.src}
           alt={bottom.alt}
           width={bottom.width}
           height={bottom.height}
+<<<<<<< HEAD
+          sizes="(max-width: 768px) 90vw, 26rem"
+          style={{ objectPosition: bottom.objectPosition }}
+=======
           sizes="(max-width: 768px) 90vw, 45vw"
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
           className="absolute inset-0 h-full w-full object-cover"
         />
         {/* wipes away */}
@@ -131,7 +221,12 @@ export default function ScrollRevealPhoto({
             alt={top.alt}
             width={top.width}
             height={top.height}
+<<<<<<< HEAD
+            sizes="(max-width: 768px) 90vw, 26rem"
+            style={{ objectPosition: top.objectPosition }}
+=======
             sizes="(max-width: 768px) 90vw, 45vw"
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
             className="h-full w-full object-cover"
           />
         </div>

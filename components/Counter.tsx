@@ -1,6 +1,14 @@
 "use client";
 
+<<<<<<< HEAD
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+
+// useLayoutEffect warns during SSR; there is no layout phase on the server.
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
+=======
 import { useEffect, useRef, useState } from "react";
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
 
 type CounterProps = {
   value: number;
@@ -22,7 +30,22 @@ export default function Counter({
   className = "",
 }: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
+<<<<<<< HEAD
+  /**
+   * Starts at the real figure so the server-rendered HTML carries the actual
+   * number — crawlers that don't run JS were previously indexing "0". The
+   * reset to zero happens in a layout effect, before the browser paints, so
+   * the animation still starts from nothing with no visible flash.
+   */
+  const [shown, setShown] = useState(value);
+
+  useIsomorphicLayoutEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    setShown(0);
+  }, []);
+=======
   const [shown, setShown] = useState(0);
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
 
   useEffect(() => {
     const el = ref.current;

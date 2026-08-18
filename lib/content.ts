@@ -7,17 +7,33 @@
 export const PERSON = {
   name: "Milind Gauns",
   fullName: "Milind S. Gauns",
+<<<<<<< HEAD
+  /** What he does, in the language recruiters scan for. */
+  positioning: "Analytics × Operations × Product",
+  pitch: "Turning real-world operational problems into data-driven solutions.",
+=======
   tagline: "Where engineering meets data",
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
   /** The concept line — the knight's tour as career shape. */
   thesis:
     "A knight never moves in a straight line. It still covers the whole board.",
   now: "PGDM Big Data Analytics — Goa Institute of Management, 2026–28",
+<<<<<<< HEAD
+  previously: "Ex-Godrej & Boyce",
+  availability:
+    "Open to internships in data, business, product & operations analytics, and consulting.",
+=======
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
   emails: {
     student: "milind.gauns2026b@gim.ac.in",
     personal: "milindgauns66@gmail.com",
   },
   linkedin: "https://www.linkedin.com/in/milindgauns/",
   github: "https://github.com/Milind-Gauns",
+<<<<<<< HEAD
+  resume: "/Milind-Gauns-Resume.pdf",
+=======
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
 } as const;
 
 export const INTRO = [
@@ -184,6 +200,18 @@ export type Project = {
   bullets: string[];
   stack: string[];
   status?: string;
+<<<<<<< HEAD
+  /** The single hardest-hitting result, pulled out of the bullets. */
+  outcome?: string;
+  /** Given top billing and a larger card. */
+  featured?: boolean;
+  /**
+   * Repo / demo / writeup links. Left empty deliberately — add real URLs
+   * here as the repositories go public. Never invent one.
+   */
+  links?: { label: string; href: string }[];
+=======
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
 };
 
 export const PROJECTS: Project[] = [
@@ -192,6 +220,21 @@ export const PROJECTS: Project[] = [
     title: "Grain Distribution Optimisation",
     org: "Dept. of Civil Supplies & Consumer Affairs, Govt. of Goa",
     year: "2025—26",
+<<<<<<< HEAD
+    featured: true,
+    summary:
+      "Goa's public distribution system moves subsidised grain to half a million people through a chain that had never been modelled. I built the model — after walking the chain myself, from the central godown to the shop counter.",
+    bullets: [
+      "Modelled grain movement across 1 central godown, 11 local godowns, 450+ fair price shops and 40+ vehicles, mapping gaps through field study with officials and shop operators.",
+      "Engineered a two-stage simulation in Python deriving shop-level demand from AAY, PHH and APL ration-card counts under vehicle capacity, trip-limit and reorder constraints.",
+      "Delivered a Streamlit dashboard with KPI tracking, at-risk stock alerts and automated Excel/PDF reporting.",
+    ],
+    stack: ["Python", "Pandas", "Streamlit", "Plotly"],
+    status: "In implementation with the department",
+    outcome:
+      "Awarded an official letter of commendation by the Department, and the model is now in implementation.",
+    links: [],
+=======
     summary:
       "A two-stage simulation of Goa's public distribution system, built after field study with officials, godown supervisors, drivers and shop operators.",
     bullets: [
@@ -201,6 +244,7 @@ export const PROJECTS: Project[] = [
     ],
     stack: ["Python", "Streamlit", "Plotly", "Pandas"],
     status: "In implementation with the department",
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
   },
   {
     index: "02",
@@ -208,6 +252,19 @@ export const PROJECTS: Project[] = [
     org: "Goa Institute of Management",
     year: "2026",
     summary:
+<<<<<<< HEAD
+      "Six campus services for 1,500 students were being coordinated over WhatsApp. I replaced that with a Telegram bot and a role-based admin panel.",
+    bullets: [
+      "Built on Python, FastAPI and SQLAlchemy with a relational booking schema and a role-based admin panel for service owners.",
+      "Deployed on Microsoft Azure with 60 automated regression tests.",
+      "Piloted with 30+ students ahead of campus-wide release.",
+    ],
+    stack: ["Python", "FastAPI", "SQLAlchemy", "Azure"],
+    status: "Piloted, cleared for release",
+    outcome:
+      "Bus and laundry modules cleared for the first campus-wide release.",
+    links: [],
+=======
       "Replaced WhatsApp-based coordination across six campus services for a 1,500-student campus with a Telegram bot and a role-based admin panel.",
     bullets: [
       "Built on Python, FastAPI and SQLAlchemy with a role-based admin panel for service owners.",
@@ -216,6 +273,7 @@ export const PROJECTS: Project[] = [
     ],
     stack: ["Python", "FastAPI", "SQLAlchemy", "Azure"],
     status: "Piloted, first release cleared",
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
   },
   {
     index: "03",
@@ -223,12 +281,23 @@ export const PROJECTS: Project[] = [
     org: "B.Tech thesis — NIT Goa",
     year: "2024",
     summary:
+<<<<<<< HEAD
+      "Estimating a lithium-ion battery's state of charge from drive-cycle data, where the raw signal is noisy and the conventional method drifts over time.",
+    bullets: [
+      "Estimated state of charge in MATLAB using Coulomb counting and artificial neural networks trained on drive-cycle data.",
+      "Benchmarked the neural network estimates against conventional counting to quantify drift.",
+    ],
+    stack: ["MATLAB", "Neural networks"],
+    outcome: "Improved estimation stability under varying load conditions.",
+    links: [],
+=======
       "Estimating electric-vehicle battery state of charge from drive-cycle data, where the raw signal is noisy and the naive method drifts.",
     bullets: [
       "Combined Coulomb counting with artificial neural networks in MATLAB on drive-cycle data.",
       "Improved estimation stability under varying load.",
     ],
     stack: ["MATLAB", "Neural Networks"],
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
   },
 ];
 
@@ -268,7 +337,23 @@ export const LEADERSHIP = [
 export const HONOURS = [
   {
     year: "2026",
+<<<<<<< HEAD
+    text: "Official letter of commendation from the Dept. of Civil Supplies & Consumer Affairs, Govt. of Goa, for the state grain logistics model.",
+  },
+  {
+    year: "2026",
+    text: "Finalist — top 12 of 120 competing teams, GIMPACT Hackathon, Goa Institute of Management.",
+  },
+  {
+    year: "2026",
+    text: "Advanced to round 2 of 3 at the RPG Outperform national case competition, as 1 of only 5 teams qualifying from GIM.",
+  },
+  {
+    year: "2026",
+    text: "Cleared the second round of the Airtel iCreate national case competition.",
+=======
     text: "Official letter of commendation, Dept. of Civil Supplies & Consumer Affairs, Govt. of Goa, for the state grain logistics model.",
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
   },
   {
     year: "2021",
@@ -276,16 +361,56 @@ export const HONOURS = [
   },
   {
     year: "2021",
+<<<<<<< HEAD
+=======
     text: "Ranked in the top 3 of class in the first year of B.Tech, NIT Goa.",
   },
   {
     year: "2021",
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
     text: "Certified in Programming for Everybody (Python), University of Michigan via Coursera.",
   },
 ];
 
 /* ---------------- skills ---------------- */
 
+<<<<<<< HEAD
+/** Grouped by what the work actually is, not by "languages vs tools". */
+export const SKILL_GROUPS = [
+  {
+    name: "Analytics & data",
+    items: ["Python", "Pandas", "NumPy", "SQL", "PostgreSQL", "Data analysis"],
+  },
+  {
+    name: "Visualisation & BI",
+    items: [
+      "Power BI",
+      "Streamlit",
+      "Plotly",
+      "Excel — pivots & dashboards",
+      "Dashboarding",
+    ],
+  },
+  {
+    name: "Backend & cloud",
+    items: ["FastAPI", "SQLAlchemy", "Microsoft Azure", "Git & GitHub"],
+  },
+  {
+    name: "Operations",
+    items: [
+      "MIS reporting",
+      "Incident & escalation management",
+      "Process improvement",
+    ],
+  },
+  {
+    name: "Engineering",
+    items: ["MATLAB", "C", "C++"],
+  },
+];
+
+export const SKILL_MARQUEE = SKILL_GROUPS.flatMap((group) => group.items);
+=======
 export const SKILLS = {
   programming: [
     "Python",
@@ -309,6 +434,7 @@ export const SKILLS = {
 };
 
 export const SKILL_MARQUEE = [...SKILLS.programming, ...SKILLS.tools];
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
 
 /* ---------------- off the clock ---------------- */
 
@@ -321,7 +447,11 @@ export const OFF_THE_CLOCK = [
   {
     title: "Racquet sports",
     detail:
+<<<<<<< HEAD
+      "Runner-up at the state-level pickleball tournament in Goa, 2026. First place in men's doubles at intra-college badminton, and played for the NIT Goa badminton and higher secondary table tennis teams at district level.",
+=======
       "First place in men's doubles at intra-college badminton. Played higher secondary table tennis for a team ranked third at district level. Pickleball, currently.",
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
   },
   {
     title: "Strays",
@@ -348,12 +478,22 @@ export const PHOTOS = {
     src: "/photos/palace.webp",
     width: 1400,
     height: 2487,
+<<<<<<< HEAD
+    // he stands in the lower third, under the arches
+    objectPosition: "50% 68%",
+=======
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
     alt: "Milind Gauns laughing beneath the arches of Thirumalai Nayakkar Mahal",
   },
   strays: {
     src: "/photos/strays.webp",
     width: 1400,
     height: 2487,
+<<<<<<< HEAD
+    // he and the dogs sit just below centre, above the empty foreground sand
+    objectPosition: "50% 58%",
+=======
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
     alt: "Milind Gauns walking three dogs along a Goa beach at dawn",
   },
   pickleball: {

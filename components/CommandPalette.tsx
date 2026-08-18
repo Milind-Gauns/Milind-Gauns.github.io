@@ -66,6 +66,19 @@ export default function CommandPalette() {
     }));
 
     return [
+<<<<<<< HEAD
+      {
+        id: "resume",
+        label: "Download résumé",
+        hint: "PDF",
+        keywords: "resume cv download pdf curriculum vitae",
+        run: () => {
+          close();
+          window.open(PERSON.resume, "_blank", "noopener,noreferrer");
+        },
+      },
+=======
+>>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
       ...nav,
       {
         id: "copy-student",
