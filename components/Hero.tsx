@@ -24,46 +24,7 @@ export default function Hero() {
               Gauns
             </h1>
           </Reveal>
-<<<<<<< HEAD
-          <Reveal delay={180}>
-            <p className="mt-8 max-w-md text-balance text-xl leading-snug text-ink md:text-2xl">
-              {PERSON.pitch}
-            </p>
-          </Reveal>
-          <Reveal delay={260}>
-            <p className="mt-6 max-w-sm font-mono text-sm leading-relaxed text-muted">
-              {PERSON.now}
-              <br />
-              {PERSON.previously}
-            </p>
-          </Reveal>
-          <Reveal delay={340}>
-            <p className="mt-8 inline-flex max-w-sm items-start gap-3 rounded-md bg-surface px-4 py-3 font-mono text-[11px] leading-relaxed text-ink/85">
-              <span
-                aria-hidden="true"
-                className="mt-[0.45em] h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
-              />
-              {PERSON.availability}
-            </p>
-          </Reveal>
-          <Reveal delay={420}>
-            <div className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-3 font-mono text-xs">
-              <a
-                href="#projects"
-                className="rounded-md bg-accent px-5 py-3 font-medium text-base transition-opacity hover:opacity-90"
-              >
-                View projects
-              </a>
-              <a
-                href={PERSON.resume}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-md px-5 py-3 text-ink ring-1 ring-ink/20 transition-colors hover:text-accent hover:ring-accent/60"
-              >
-                Download résumé ↓
-              </a>
-              <span className="hidden text-muted lg:inline">
-=======
+
           <Reveal delay={200}>
             <p className="mt-10 max-w-md text-balance text-xl leading-snug text-ink md:text-2xl">
               {PERSON.thesis}
@@ -83,7 +44,6 @@ export default function Hero() {
                 see the work
               </a>
               <span className="hidden text-muted sm:inline">
->>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
                 or press{" "}
                 <kbd className="rounded border border-ink/15 px-1.5 py-0.5 text-[10px] text-ink/70">
                   ⌘K
