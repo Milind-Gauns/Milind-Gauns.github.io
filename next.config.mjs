@@ -1,13 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-<<<<<<< HEAD
-  reactStrictMode: true,
-=======
-  output: 'export',
+  // GitHub Pages serves static files only: `next build` must emit ./out,
+  // which the Pages workflow uploads. Image optimisation needs a server,
+  // so it is disabled here.
+  output: "export",
   images: {
     unoptimized: true,
   },
->>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
 };
 
 export default nextConfig;

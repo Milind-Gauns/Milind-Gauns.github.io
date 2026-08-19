@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-<<<<<<< HEAD
 import { PERSON } from "@/lib/content";
 
 /** `always` links survive the mobile squeeze; the rest appear from sm up. */
@@ -11,15 +10,6 @@ const LINKS: { href: string; label: string; always?: boolean }[] = [
   { href: "#projects", label: "projects", always: true },
   { href: "#play", label: "play" },
   { href: "#contact", label: "contact", always: true },
-=======
-
-const LINKS: [href: string, label: string][] = [
-  ["#about", "about"],
-  ["#work", "work"],
-  ["#projects", "projects"],
-  ["#play", "play"],
-  ["#contact", "contact"],
->>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
 ];
 
 export default function Nav() {
@@ -49,7 +39,6 @@ export default function Nav() {
         >
           mg<span className="text-accent">.</span>
         </a>
-<<<<<<< HEAD
         <ul className="flex items-center gap-3 sm:gap-6 md:gap-8">
           {LINKS.map((link) => (
             <li key={link.href} className={link.always ? "" : "hidden sm:block"}>
@@ -72,19 +61,6 @@ export default function Nav() {
               <span className="hidden sm:inline">résumé ↓</span>
             </a>
           </li>
-=======
-        <ul className="flex items-center gap-3 sm:gap-6 md:gap-9">
-          {LINKS.map(([href, label]) => (
-            <li key={href}>
-              <a
-                href={href}
-                className="text-muted transition-colors hover:text-accent"
-              >
-                {label}
-              </a>
-            </li>
-          ))}
->>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
         </ul>
       </nav>
     </header>

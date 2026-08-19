@@ -13,11 +13,7 @@ export default function Hero() {
         {/* ---- left: the claim ---- */}
         <div className="lg:pr-8">
           <Reveal>
-<<<<<<< HEAD
             <p className="eyebrow">{PERSON.positioning}</p>
-=======
-            <p className="eyebrow">Portfolio — 2026</p>
->>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
           </Reveal>
           <Reveal delay={100}>
             <h1 className="mt-6 text-[clamp(2.75rem,8vw,5.5rem)] font-medium leading-[0.92] tracking-tight">
@@ -26,7 +22,6 @@ export default function Hero() {
               Gauns
             </h1>
           </Reveal>
-<<<<<<< HEAD
           <Reveal delay={180}>
             <p className="mt-8 max-w-md text-balance text-xl leading-snug text-ink md:text-2xl">
               {PERSON.pitch}
@@ -65,27 +60,6 @@ export default function Hero() {
                 Download résumé ↓
               </a>
               <span className="hidden text-muted lg:inline">
-=======
-          <Reveal delay={200}>
-            <p className="mt-10 max-w-md text-balance text-xl leading-snug text-ink md:text-2xl">
-              {PERSON.thesis}
-            </p>
-          </Reveal>
-          <Reveal delay={300}>
-            <p className="mt-6 max-w-sm font-mono text-sm leading-relaxed text-muted">
-              {PERSON.now}
-            </p>
-          </Reveal>
-          <Reveal delay={400}>
-            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-xs">
-              <a
-                href="#work"
-                className="text-accent underline decoration-accent-dim underline-offset-[6px] transition-colors hover:decoration-accent"
-              >
-                see the work
-              </a>
-              <span className="hidden text-muted sm:inline">
->>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
                 or press{" "}
                 <kbd className="rounded border border-ink/15 px-1.5 py-0.5 text-[10px] text-ink/70">
                   ⌘K

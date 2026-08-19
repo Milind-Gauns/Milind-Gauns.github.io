@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-<<<<<<< HEAD
 import { useEffect, useRef } from "react";
 import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 
@@ -17,14 +16,6 @@ type Photo = {
   /** Focal point for the crop, e.g. "50% 60%". */
   objectPosition?: string;
 };
-=======
-import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
-
-type Photo = { src: string; alt: string; width: number; height: number };
->>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
 
 type Props = {
   top: Photo;
@@ -54,7 +45,6 @@ export default function ScrollRevealPhoto({
   const cover = useRef<HTMLDivElement>(null);
   const edge = useRef<HTMLDivElement>(null);
 
-<<<<<<< HEAD
   /**
    * Driven by live geometry rather than ScrollTrigger.
    *
@@ -106,59 +96,13 @@ export default function ScrollRevealPhoto({
       edgeEl.style.opacity = "";
     };
   }, [reduced]);
-=======
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const mm = gsap.matchMedia();
-
-    mm.add("(prefers-reduced-motion: no-preference)", () => {
-      const el = root.current;
-      const coverEl = cover.current;
-      const edgeEl = edge.current;
-      if (!el || !coverEl || !edgeEl) return;
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: el,
-          start: "top 82%",
-          end: "bottom 55%",
-          scrub: 0.8,
-        },
-      });
-
-      tl.fromTo(
-        coverEl,
-        { clipPath: "inset(0% 0% 0% 0%)" },
-        { clipPath: "inset(0% 0% 100% 0%)", ease: "none" },
-        0,
-      ).fromTo(
-        edgeEl,
-        { top: "0%", opacity: 0 },
-        { top: "100%", opacity: 1, ease: "none" },
-        0,
-      );
-
-      return () => {
-        tl.scrollTrigger?.kill();
-        tl.kill();
-        gsap.set([coverEl, edgeEl], { clearProps: "all" });
-      };
-    });
-
-    return () => mm.revert();
-  }, []);
->>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
 
   // Without the wipe the top photo would cover the bottom one forever, so
   // reduced motion gets both, stacked.
   if (reduced) {
     return (
       <figure className={className}>
-<<<<<<< HEAD
         <div className="max-w-[26rem] space-y-4">
-=======
-        <div className="space-y-4">
->>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
           {[bottom, top].map((photo, i) => (
             <div
               key={photo.src}
@@ -169,12 +113,8 @@ export default function ScrollRevealPhoto({
                 alt={photo.alt}
                 width={photo.width}
                 height={photo.height}
-<<<<<<< HEAD
                 sizes="(max-width: 768px) 90vw, 26rem"
                 style={{ objectPosition: photo.objectPosition }}
-=======
-                sizes="(max-width: 768px) 90vw, 45vw"
->>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
                 className="aspect-[4/5] w-full object-cover"
               />
               <figcaption className="sr-only">
@@ -195,23 +135,15 @@ export default function ScrollRevealPhoto({
 
   return (
     <figure ref={root} className={className}>
-<<<<<<< HEAD
       <div className="relative h-[clamp(20rem,56vh,32rem)] w-full max-w-[26rem] overflow-hidden rounded-lg bg-surface">
-=======
-      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg bg-surface">
->>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
         {/* revealed underneath */}
         <Image
           src={bottom.src}
           alt={bottom.alt}
           width={bottom.width}
           height={bottom.height}
-<<<<<<< HEAD
           sizes="(max-width: 768px) 90vw, 26rem"
           style={{ objectPosition: bottom.objectPosition }}
-=======
-          sizes="(max-width: 768px) 90vw, 45vw"
->>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
           className="absolute inset-0 h-full w-full object-cover"
         />
         {/* wipes away */}
@@ -221,12 +153,8 @@ export default function ScrollRevealPhoto({
             alt={top.alt}
             width={top.width}
             height={top.height}
-<<<<<<< HEAD
             sizes="(max-width: 768px) 90vw, 26rem"
             style={{ objectPosition: top.objectPosition }}
-=======
-            sizes="(max-width: 768px) 90vw, 45vw"
->>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
             className="h-full w-full object-cover"
           />
         </div>

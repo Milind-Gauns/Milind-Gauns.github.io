@@ -15,15 +15,9 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
-<<<<<<< HEAD
 const title = "Milind Gauns — Analytics × Operations × Product";
 const description =
   "Turning real-world operational problems into data-driven solutions. PGDM Big Data Analytics at Goa Institute of Management, ex-Godrej & Boyce. Built a grain logistics model now in implementation with the Government of Goa. Open to analytics, product, operations and consulting roles.";
-=======
-const title = "Milind Gauns — Where Engineering Meets Data";
-const description =
-  "Electrical engineer turned analyst. After-sales operations at Godrej, a grain logistics model in implementation with the Government of Goa, and an incoming PGDM in Big Data Analytics at Goa Institute of Management.";
->>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
 
 export const metadata: Metadata = {
   title,
@@ -32,7 +26,6 @@ export const metadata: Metadata = {
   keywords: [
     "Milind Gauns",
     "data analytics",
-<<<<<<< HEAD
     "business analytics",
     "product analytics",
     "operations analytics",
@@ -41,11 +34,6 @@ export const metadata: Metadata = {
     "NIT Goa",
     "Power BI",
     "Python",
-=======
-    "Goa Institute of Management",
-    "NIT Goa",
-    "operations",
->>>>>>> 5c27625259916a350bdd5e8163d6633baca77739
     "portfolio",
   ],
   openGraph: {
